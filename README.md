@@ -3,7 +3,7 @@
 asynchronous multiple read file cat command
 
 ## how to use
-```
+```sh
 # terminal A
 mkfifo hogepipe
 cat hogepipe | gdb
@@ -25,3 +25,6 @@ mkfifo hogefifo
 mkfifo piyofifo
 { echo "cat hogefifo"; echo "cat piyofifo"; } | xargs -L1 -I{} -P2 bash -c "{}"
 ```
+
+## NOTE
+* `io.MultiReader` read synchronously
